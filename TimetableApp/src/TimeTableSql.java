@@ -1,7 +1,6 @@
 import java.sql.*;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.LinkedList;
 
 public class TimeTableSql {
 	private static String dbURL="jdbc:derby:C:/Users/timog/MyDB;create=true";
