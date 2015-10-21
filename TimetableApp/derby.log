@@ -1,0 +1,16 @@
+----------------------------------------------------------------
+Wed Oct 21 18:16:48 CEST 2015:
+Booten von Derby-Version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): Instanz a816c00e-0150-8b30-452e-000000ada280
+für Datenbankverzeichnis C:\Users\timog\MyDB mit Class Loader sun.misc.Launcher$AppClassLoader@e2f2a
+Geladen aus file:/C:/Users/timog/git/Timetable/TimetableApp/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_60-b27
+user.dir=C:\Users\timog\git\Timetable\TimetableApp
+os.name=Windows 10
+os.arch=x86
+os.version=10.0
+derby.system.home=null
+Datenbank-Class Loader wurde gestartet - derby.database.classpath=''
+----------------------------------------------------------------
+Wed Oct 21 18:16:48 CEST 2015:
+Instanz a816c00e-0150-8b30-452e-000000ada280 im Datenbankverzeichnis C:\Users\timog\MyDB mit Class Loader sun.misc.Launcher$AppClassLoader@e2f2a wird heruntergefahren
