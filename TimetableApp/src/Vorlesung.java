@@ -1,30 +1,29 @@
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 
 public class Vorlesung {
-	private int dauer;
-	private Date anfangszeit;
+	private int duration;
 	private String fach;
 	private String raum;
+	private GregorianCalendar cal;	
+		
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public Vorlesung(Date anfangszeit, int dauer, String fach, String raum){
-		this.anfangszeit = anfangszeit;
-		this.dauer=dauer;
+	public Vorlesung(int year, int month, int day, int hour, int minute, int duration, String fach, String raum){
+		cal = new GregorianCalendar(year, month-1, day, hour, minute);
+		this.duration=duration;
 		this.fach=fach;
 		this.raum=raum;
+	}
+	
+	public int getWeekday() {
+		return cal.get(Calendar.DAY_OF_WEEK)-1;
+	}
+	
+	public String toString() {
+		return fach+"\nWochentag:"+getWeekday();
 		
 	}
 }
