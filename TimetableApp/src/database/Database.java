@@ -1,6 +1,8 @@
+package database;
 import java.util.ArrayList;
 
 public class Database {
+	
 	public Vorlesungsliste vorlesungsliste;
 	
 	public ArrayList<Studiengang> studiengangliste;

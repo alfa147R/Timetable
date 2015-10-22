@@ -1,5 +1,8 @@
 import java.util.Calendar;
 
+import database.TimeTableSql;
+import database.Vorlesungsliste;
+
 public class HelloWorld {
 
 	

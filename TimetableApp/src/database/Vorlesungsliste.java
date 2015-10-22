@@ -1,3 +1,4 @@
+package database;
 import java.util.LinkedList;
 
 public class Vorlesungsliste extends LinkedList<Vorlesung>{
