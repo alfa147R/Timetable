@@ -4,10 +4,8 @@ public class HelloWorld {
 
 	
 	public static void main(String[] args) {
-		TimeTableSql sql = new TimeTableSql();
-		
-		Vorlesungsliste liste = sql.SelectVorlesungen();
-		
-		System.out.println(liste.getWeekdayvorlesungen(Calendar.WEDNESDAY));
+		Vorlesungsliste liste = new Vorlesungsliste();
+		liste = new TimeTableSql().SelectVorlesungen();
+		System.out.println(liste.getWeekdayvorlesungen(Calendar.THURSDAY));
 	}
 }

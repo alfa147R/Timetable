@@ -1,5 +1,4 @@
 import java.sql.*;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class TimeTableSql {
@@ -28,19 +27,20 @@ public static void CreateConnection() {
 public Vorlesungsliste SelectVorlesungen(){
 	try{
 		CreateConnection();
-		stmt=conn.createStatement();
+		stmt=conn.createStatement(
+				ResultSet.TYPE_SCROLL_INSENSITIVE,
+				ResultSet.CONCUR_UPDATABLE);
 		ResultSet results = stmt.executeQuery("SELECT * FROM "+tablename);
 		ResultSetMetaData rsmd = results.getMetaData();
 		Vorlesungsliste resultlist = new Vorlesungsliste();
 		while (results.next()) {
 			GregorianCalendar cal = new GregorianCalendar();
-			cal.setTime(results.getDate("tag"));
-			cal.set(Calendar.HOUR_OF_DAY, results.getTime("Zeit").getHours());
-			cal.set(Calendar.MINUTE, results.getTime("Zeit").getMinutes());
+			cal.setTimeInMillis(results.getTimestamp("Anfangszeit").getTime());;
 			int dauer = results.getInt("Dauer");
+			int id = results.getInt("id");
 			String fach = results.getString("Fach");
 			String raum = results.getString("Raum");
-			resultlist.add(new Vorlesung(cal, dauer, fach, raum));
+			resultlist.add(new Vorlesung(cal, dauer, fach, raum, id));
 		}
 			Shutdown();
 			return resultlist;
@@ -50,6 +50,9 @@ public Vorlesungsliste SelectVorlesungen(){
 }
 	return null;
 }
+
+
+
 private static void Shutdown()
 {
     try

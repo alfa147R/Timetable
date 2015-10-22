@@ -4,16 +4,17 @@ import java.util.GregorianCalendar;
 
 
 public class Vorlesung {
-	private int duration;
+	private int id, duration;
 	private String fach;
 	private String raum;
 	private GregorianCalendar cal;	
 		
-	public Vorlesung(GregorianCalendar cal, int duration, String fach, String raum){
+	public Vorlesung(GregorianCalendar cal, int duration, String fach, String raum, int id){
 		this.cal = cal;
 		this.duration=duration;
 		this.fach=fach;
 		this.raum=raum;
+		this.id=id;
 	}
 	
 	public Vorlesung(int year, int month, int day, int hour, int minute, int duration, String fach, String raum){
@@ -31,7 +32,7 @@ public class Vorlesung {
 	}
 	
 	public String toString() {
-		return fach+"\nDatum: "+cal.getTime()+"\nWochentag: "+getWeekday()+"\n"+"Start: "+getStartTime();
+		return id+": "+fach+"\nDatum: "+cal.getTime()+"\nWochentag: "+getWeekday()+"\n"+"Start: "+getStartTime();
 		
 	}
 }
